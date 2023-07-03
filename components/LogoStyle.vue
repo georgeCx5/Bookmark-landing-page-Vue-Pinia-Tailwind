@@ -8,12 +8,6 @@ export default {
 
       }
    },
-   props: {
-      isMain: {
-         Boolean,
-         default: false,
-      }
-   },
    computed: {
       ...mapStores(useMainStore),
       getState() {
@@ -21,7 +15,7 @@ export default {
          let iconOutside;
          let textColor;
          if (this.mainStore.isNavActive == true) {
-            iconInside = '#FFFFFF00';
+            iconInside = '#242A45';
             iconOutside = '#FFF';
             textColor = '#FFF';
          } else {

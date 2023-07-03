@@ -4,6 +4,8 @@ export const useMainStore = defineStore('main', {
   state: () => ({
     test: 'Hola',
     isNavActive: false,
+    featuresArr: [true, false, false],
+    featureValue: 0,
   }),
   getters: {
     getTest(state) {
@@ -13,6 +15,11 @@ export const useMainStore = defineStore('main', {
   actions: {
     setTest(first) {
       this.test += first;
-    }
+    },
+    setActiveFeature(index) {
+      this.featuresArr.fill(false);
+      this.featuresArr[index] = true;
+      this.featureValue = index;
+    },
   }
 })
