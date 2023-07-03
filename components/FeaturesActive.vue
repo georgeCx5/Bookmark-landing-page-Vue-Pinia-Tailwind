@@ -36,19 +36,35 @@ export default {
    },
    components: {
       BtnStyle,
+   },
+   computed: {
+      getIndex() {
+         switch (this.dataIndex) {
+            case 0:
+               return '-bottom-[38px]';
+            case 1:
+               return '-bottom-3';
+            case 2:
+               return '-bottom-[30px]';
+         }
+      }
    }
 }
 </script>
 <template>
-   <div>
-      <img :src="data[dataIndex].img" :alt="`Image ${dataIndex + 1}`">
-      <div class=" relative right-[-285px] w-[577px] h-[203px] bg-neo-soft-blue rounded-[316px]"></div>
+   <div class=" flex flex-col gap-16">
+      <div class=" relative">
+         <img class=" relative z-10" :src="data[dataIndex].img" :alt="`Image ${dataIndex + 1}`">
+         <div :class="` absolute left-[-300px] ${getIndex} w-[577px] h-[203px] bg-neo-soft-blue rounded-[316px]`"></div>
+      </div>
+      <div class=" flex flex-col items-center gap-4">
+         <h2 class=" text-[24px] tracking-[-.08px] font-medium">
+            {{ data[dataIndex].header }}
+         </h2>
+         <p class=" text-[15px] leading-[25px] opacity-50">
+            {{ data[dataIndex].main }}
+         </p>
+         <BtnStyle btn-text="More Info" type-color="blue" w-size="w-[114px]" />
+      </div>
    </div>
-   <h2 class=" text-[24px] leading-[52px] tracking-[-.08px] font-medium">
-      {{ data[dataIndex].header }}
-   </h2>
-   <p class=" text-[15px] leading-[25px] opacity-50">
-      {{ data[dataIndex].main }}
-   </p>
-   <BtnStyle btn-text="More Info" type-color="blue" w-size="w-[114px]" />
 </template>

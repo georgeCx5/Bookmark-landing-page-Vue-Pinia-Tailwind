@@ -40,7 +40,7 @@ export default {
 <template>
    <div :class="` relative flex flex-col ${getActiveState.justify} gap-[15px] h-14 select-none`">
       <button @click="mainStore.setActiveFeature(btnIndex)"
-         :class="` text-[16px] leading-[17px] tracking-[.53px] ${getActiveState.opacity} hover:opacity-100 `">
+         :class="` text-[16px] leading-[17px] tracking-[.53px] ${getActiveState.opacity} hover:opacity-100 hover:text-neo-soft-red `">
          {{ btnText }}
       </button>
       <div v-show="getActiveState.barState" class=" self-center w-[88%] h-[4px] bg-neo-soft-red"></div>
