@@ -8,7 +8,6 @@ import featuresThree from '@/assets/images/illustration-features-tab-3.svg?url';
 export default {
    data() {
       return {
-         // dataImg: [featuresOne, featuresTwo, featuresThree],
          data: [
             {
                img: featuresOne,
@@ -54,7 +53,7 @@ export default {
 <template>
    <div class=" flex flex-col gap-16">
       <div class=" relative">
-         <img class=" relative z-10" :src="data[dataIndex].img" :alt="`Image ${dataIndex + 1}`">
+         <img class=" relative z-10" :src="data[dataIndex].img" :alt="`Image ${dataIndex + 1}`" draggable="false">
          <div :class="` absolute left-[-300px] ${getIndex} w-[577px] h-[203px] bg-neo-soft-blue rounded-[316px]`"></div>
       </div>
       <div class=" flex flex-col items-center gap-4">
