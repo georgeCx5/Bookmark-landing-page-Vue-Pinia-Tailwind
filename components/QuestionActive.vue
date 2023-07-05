@@ -51,7 +51,7 @@ export default {
 <template>
    <div class=" flex flex-col">
       <button @click="mainStore.setActiveQuestion(dataIndex)" class=" flex justify-between items-center">
-         <h4 class=" text-[15px] leading-[32px]">
+         <h4 class=" text-[15px] leading-[32px] select-none">
             {{ data[dataIndex].header }}
          </h4>
          <QuestionArrow :is-active="mainStore.questionsArr[dataIndex]" />

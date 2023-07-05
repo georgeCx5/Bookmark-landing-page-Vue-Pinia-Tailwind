@@ -32,7 +32,7 @@ export default {
 </script>
 <template>
    <button
-      :class="` ${wSize} h-[48px] ${getTypeColor} text-[14px] leading-[28px] tracking-[.25px] font-medium rounded-[5px] drop-shadow-btn select-none`">
+      :class="` ${wSize} h-[48px] ${getTypeColor} text-[14px] leading-[28px] tracking-[.25px] font-medium rounded-[5px] drop-shadow-lg select-none`">
       {{ btnText }}
    </button>
 </template>

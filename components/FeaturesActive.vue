@@ -56,7 +56,7 @@ export default {
          <img class=" relative z-10" :src="data[dataIndex].img" :alt="`Image ${dataIndex + 1}`" draggable="false">
          <div :class="` absolute left-[-300px] ${getIndex} w-[577px] h-[203px] bg-neo-soft-blue rounded-[316px]`"></div>
       </div>
-      <div class=" flex flex-col items-center gap-4">
+      <div class=" flex flex-col items-center gap-4 text-center">
          <h2 class=" text-[24px] tracking-[-.08px] font-medium">
             {{ data[dataIndex].header }}
          </h2>

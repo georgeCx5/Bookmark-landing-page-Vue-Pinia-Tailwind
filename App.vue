@@ -77,7 +77,7 @@ export default {
         </div>
       </nav>
       <div :class="` relative self-center mb-16`">
-        <img class=" relative w-[353px] z-10" :src="headerImg" alt="headerImg">
+        <img class=" relative w-[353px] z-10" :src="headerImg" alt="headerImg" draggable="false">
         <div class=" absolute right-[-285px] top-[56px] w-[577px] h-[203px] bg-neo-soft-blue rounded-[316px]"></div>
       </div>
       <div class=" flex flex-col items-center text-center px-8">
@@ -133,7 +133,7 @@ export default {
       </section>
       <section class=" flex flex-col px-[30px] mb-[120px]">
         <div class=" flex flex-col gap-4 mb-16 text-center">
-          <h2 class=" text-[24px] leading-[30px] tracking-[-.08px]">
+          <h2 class=" text-[24px] leading-[30px] tracking-[-.08px] font-medium">
             Frequently Asked Questions</h2>
           <p class=" text-[15px] leading-[25px] opacity-50">
             Here are some of our FAQs. If you have any other questions you’d like answered please feel free to email us.
@@ -168,7 +168,7 @@ export default {
             </p>
           </div>
           <button @click="mainStore.setCheckEmail()"
-            class=" w-full h-12 bg-neo-soft-red hover:bg-white hover:text-neo-soft-red text-[14px] leading-[28px] tracking-[.25px] font-medium hover:border-2 hover:border-neo-soft-red rounded-[5px] shadow-lg select-none">
+            class=" w-full h-12 bg-neo-soft-red hover:bg-white hover:text-neo-soft-red text-[14px] leading-[28px] tracking-[.25px] font-medium hover:border-2 hover:border-neo-soft-red rounded-[5px] drop-shadow-lg select-none">
             Contact Us
           </button>
         </div>
