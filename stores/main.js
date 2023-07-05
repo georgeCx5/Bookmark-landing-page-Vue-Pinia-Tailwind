@@ -15,6 +15,18 @@ export const useMainStore = defineStore('main', {
   getters: {
     getTest(state) {
       return state.test;
+    },
+    getError(state) {
+      let border;
+      let gap;
+      if (state.emailError) {
+        border = 'border-2 border-neo-soft-red';
+        gap = 'gap-[38px]';
+      } else {
+        border = '';
+        gap = 'gap-[16px]';
+      }
+      return { border, gap }
     }
   },
   actions: {
@@ -39,6 +51,7 @@ export const useMainStore = defineStore('main', {
     setCheckEmail() {
       if (this.rgxEmail.test(this.emailValue)) {
         this.emailError = false;
+        this.emailValue = '';
       } else {
         this.emailError = true;
       }

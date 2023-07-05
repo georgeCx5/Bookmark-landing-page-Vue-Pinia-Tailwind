@@ -56,7 +56,7 @@ export default {
          </p>
       </div>
       <div class=" flex flex-col items-center gap-6 w-full">
-         <img :src="bgDots" alt="bgDots" draggable="false">
+         <img class=" select-none" :src="bgDots" alt="bgDots" draggable="false">
          <BtnStyle btn-text="Add & Install Extension" type-color="blue" w-size="w-[83%]" />
       </div>
    </div>

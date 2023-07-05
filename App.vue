@@ -154,19 +154,21 @@ export default {
           <h3 class=" text-[24px] leading-[28px] tracking-[-.08px] font-medium">
             Stay up-to-date with what we’re doing</h3>
         </div>
-        <div class=" flex flex-col gap-[38px] w-full">
+        <div :class="` flex flex-col ${mainStore.getError.gap} w-full`">
           <div class=" relative">
             <!-- Computar el gap, y alinear otros pequeños detalles -->
-            <input class=" relative w-full h-12 px-5 text-neo-very-dark-blue rounded-[5px] z-10" type="email"
-              placeholder="Enter your email address" v-model="mainStore.emailValue">
-            <img v-show="mainStore.emailError" class=" absolute top-4 right-3 z-10" :src="iconError" alt="iconError">
+            <input @keydown="mainStore.emailError = false" @keyup.enter="mainStore.setCheckEmail"
+              :class="` relative w-full h-12 px-5 text-neo-very-dark-blue ${mainStore.getError.border} focus:outline-none rounded-[5px] z-10`"
+              type="email" placeholder="Enter your email address" :maxlength="28" v-model="mainStore.emailValue">
+            <img v-show="mainStore.emailError" class=" absolute top-1/2 -translate-y-1/2 right-3 z-10 select-none"
+              :src="iconError" alt="iconError" draggable="false">
             <p v-show="mainStore.emailError"
-              class=" absolute top-0 w-full h-[70px] px-3 pt-[52px] bg-neo-soft-red text-[10px] leading-[12px] tracking-[.25px] font-medium italic rounded-[5px]">
+              class=" absolute top-0 flex items-end w-full h-[70px] px-3 pb-[6px] bg-neo-soft-red text-[10px] leading-[12px] tracking-[.25px] font-medium italic rounded-[5px] select-none">
               Whoops, make sure it's an email
             </p>
           </div>
           <button @click="mainStore.setCheckEmail()"
-            class=" w-full h-12 bg-neo-soft-red text-[14px] leading-[28px] tracking-[.25px] font-medium rounded-[5px] shadow-lg">
+            class=" w-full h-12 bg-neo-soft-red hover:bg-white hover:text-neo-soft-red text-[14px] leading-[28px] tracking-[.25px] font-medium hover:border-2 hover:border-neo-soft-red rounded-[5px] shadow-lg select-none">
             Contact Us
           </button>
         </div>

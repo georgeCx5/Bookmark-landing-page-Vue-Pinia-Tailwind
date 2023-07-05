@@ -2,7 +2,7 @@
 export default {
    data() {
       return {
-         
+
       }
    },
    props: {
@@ -20,11 +20,11 @@ export default {
       getTypeColor() {
          switch (this.typeColor) {
             case 'blue':
-               return 'bg-neo-soft-blue text-white';
+               return 'bg-neo-soft-blue hover:bg-white text-white hover:text-neo-soft-blue hover:border-2 hover:border-neo-soft-blue';
             case 'red':
-               return 'bg-neo-soft-red text-white';
+               return 'bg-neo-soft-red hover:bg-white text-white hover:text-neo-soft-red hover:border-2 hover:border-neo-soft-red';
             default:
-               return 'bg-neo-extra-one text-neo-very-dark-blue text-opacity-75';
+               return 'bg-neo-extra-one hover:bg-white text-neo-very-dark-blue text-opacity-75 hover:border-2 hover:border-neo-very-dark-blue hover:border-opacity-75';
          }
       }
    }
