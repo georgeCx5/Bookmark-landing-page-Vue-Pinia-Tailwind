@@ -45,7 +45,7 @@ export default {
 }
 </script>
 <template>
-   <div class=" flex flex-col items-center gap-8 pt-[60px] pb-6 rounded-[15px] shadow-lg">
+   <div class=" flex flex-col items-center gap-8 DT:w-[30.7%] pt-[60px] pb-6 rounded-[15px] shadow-lg">
       <img :src="data[dataIndex].img" alt="logoChrome" draggable="false">
       <div class=" flex flex-col gap-[6px]">
          <h3 class=" text-[20px] leading-[24px] tracking-[.25px] font-medium">
