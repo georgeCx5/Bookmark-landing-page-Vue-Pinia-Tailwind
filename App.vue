@@ -3,6 +3,7 @@ import { useMainStore } from '@/stores/main';
 import { mapStores } from 'pinia';
 
 import LogoStyle from './components/LogoStyle.vue';
+import LogoStyleDT from './components/LogoStyleDT.vue';
 import BtnStyle from './components/BtnStyle.vue';
 import SocialNetwork from './components/SocialNetwork.vue';
 import NavBtn from './components/NavBtn.vue';
@@ -32,6 +33,7 @@ export default {
   },
   components: {
     LogoStyle,
+    LogoStyleDT,
     BtnStyle,
     SocialNetwork,
     NavBtn,
@@ -53,9 +55,10 @@ export default {
 <template>
   <body class=" flex flex-col items-center bg-white text-neo-very-dark-blue font-rubik overflow-hidden">
     <header
-      class=" relative flex flex-col w-full max-w-[425px] DT:max-w-[1920px] pt-10 DT:pt-12 mb-[120px] DT:mb-[180px]">
-      <nav class="flex justify-between items-center px-8 DT:px-[171px] mb-20 DT:mb-[100px]">
-        <LogoStyle class=" z-30" />
+      class=" relative flex flex-col w-full max-w-[425px] DT:max-w-[1920px] pt-10 DT:pt-12 mb-[120px] DT:mb-[120px]">
+      <nav class="flex justify-between items-center px-8 DT:px-[171px] mb-20 DT:mb-[104px]">
+        <LogoStyle class=" DT:hidden z-30" />
+        <LogoStyleDT class=" hidden DT:block" />
         <div @click="mainStore.isNavActive = !mainStore.isNavActive" class=" DT:hidden cursor-pointer select-none z-30">
           <img v-show="mainStore.isNavActive == false" :src="iconOpen" alt="iconOpen">
           <img v-show="mainStore.isNavActive == true" :src="iconClose" alt="iconClose">
@@ -89,11 +92,11 @@ export default {
           </button>
         </div>
       </nav>
-      <div class=" flex flex-col DT:flex-row-reverse DT:self-center DT:justify-between DT:items-center DT:w-[82.25%] bg-red-200">
+      <div class=" flex flex-col DT:flex-row-reverse DT:self-center DT:justify-between DT:items-center DT:w-[82.25%]">
         <div :class="` relative self-center mb-16 DT:mb-0`">
           <img class=" relative w-[353px] DT:w-[652px] z-10" :src="headerImg" alt="headerImg" draggable="false">
           <div
-            class=" absolute right-[-285px] top-[56px] w-[577px] DT:w-[1000px] h-[203px] DT:h-[352px] bg-neo-soft-blue rounded-[316px]">
+            class=" absolute right-[-285px] DT:right-[-545px] top-[56px] DT:top-[145px] w-[577px] DT:w-[1000px] h-[203px] DT:h-[352px] bg-neo-soft-blue rounded-[316px]">
           </div>
         </div>
         <div class=" flex flex-col items-center DT:items-start DT:w-[45.6%] px-8 DT:px-0 text-center DT:text-left">
@@ -125,7 +128,8 @@ export default {
             devices so you can access them on the go.
           </p>
         </div>
-        <div class=" flex flex-col DT:flex-row DT:justify-between items-center DT:w-[51%] mb-[72px]">
+        <div
+          class=" flex flex-col DT:flex-row DT:justify-between items-center DT:w-[51%] mb-[72px] DT:border-b-[1px] DT:border-neo-soft-blue DT:border-opacity-20">
           <FeaturesLine />
           <FeaturesChoice btn-text="Simple Bookmarking" :btn-index="0" />
           <FeaturesLine />
